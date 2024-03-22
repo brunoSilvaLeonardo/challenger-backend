@@ -1,0 +1,15 @@
+spring:
+  application: challnegerbackend
+  jpa:
+    database-platform: org.hibernate.community.dialect.SQLiteDialect
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:sqlite:test.db
+    username: sa
+    password: sa
+    driver-class-name: org.sqlite.JDBC
+
+springdoc:
+  packagesToScan: com.compass.dev.challengerbackend
+  pathsToMatch: /v1, /user
