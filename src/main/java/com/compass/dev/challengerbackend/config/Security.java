@@ -18,7 +18,8 @@ public class Security {
         return http
                 .csrf(AbstractHttpConfigurer::disable)
                 .headers(httpSecurityHeadersConfigurer -> httpSecurityHeadersConfigurer.frameOptions(HeadersConfigurer.FrameOptionsConfig::disable)) //to make accessible h2 console, it works as frame
-                .authorizeHttpRequests(a -> a.requestMatchers("/h2-console/**", "/v1/user", "/v1/create-contact")
+                .authorizeHttpRequests(a -> a.requestMatchers("/h2-console/**", "/v1/user", "/v1/create-contact",
+                                "/swagger-ui/index.html", "/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**")
                         .permitAll()
                         .anyRequest().authenticated())
                 .build();
